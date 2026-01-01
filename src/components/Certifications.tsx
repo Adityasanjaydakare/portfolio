@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { BadgeCheck, Calendar, ExternalLink } from 'lucide-react';
+import { BadgeCheck, ExternalLink } from 'lucide-react';
 
 const certifications = [
   {
@@ -7,36 +7,33 @@ const certifications = [
     title: "AWS Certified Solutions Architect",
     issuer: "Amazon Web Services",
     date: "2025",
-    credentialId: "ID123456789",
-    link: "#"
+    link: "https://example.com/aws-certificate" // Replace with actual certificate link
   },
   {
     id: 2,
-    title: "Docker Certified Associate",
-    issuer: "Docker Inc.",
+    title: "Python Certification",
+    issuer: "Python Software Foundation",
     date: "2025",
-    credentialId: "ID987654321",
-    link: "#"
+    link: "https://example.com/python-certificate" // Replace with actual certificate link
   },
   {
     id: 3,
-    title: "Certified Kubernetes Administrator",
-    issuer: "Cloud Native Computing Foundation",
+    title: "SAP Certificate",
+    issuer: "SAP",
     date: "2025",
-    credentialId: "ID456789123",
-    link: "#"
+    link: "https://example.com/sap-certificate" // Replace with actual certificate link
   },
   {
     id: 4,
-    title: "Terraform Associate",
-    issuer: "HashiCorp",
+    title: "Getting Started with Enterprise Data Science Badge",
+    issuer: "LinkedIn",
     date: "2025",
-    credentialId: "ID321654987",
-    link: "#"
+    link: "https://example.com/linkedin-certificate" // Replace with actual certificate link
   }
 ];
 
 const Certifications = () => {
+  
   return (
     <section id="certifications" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
@@ -98,13 +95,15 @@ const Certifications = () => {
               
               <div className="flex items-center justify-between">
                 <div className="text-xs text-muted-foreground">
-                  Credential ID: {cert.credentialId}
+                  {cert.issuer}
                 </div>
                 <a 
                   href={cert.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="text-primary hover:text-primary/80 transition-colors text-sm flex items-center gap-1"
                 >
-                  Verify <ExternalLink className="w-3 h-3" />
+                  View <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
             </motion.div>

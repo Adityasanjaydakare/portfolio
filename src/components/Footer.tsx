@@ -109,7 +109,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
           >
-            Made with <Heart className="w-4 h-4 text-emerald-500 fill-emerald-500" /> by Aditya dakare
+            Made with <Heart className="w-4 h-4 text-emerald-500 fill-emerald-500" /> by Aditya Dakare
           </motion.p>
 
           <motion.p

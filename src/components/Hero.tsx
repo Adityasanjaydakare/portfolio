@@ -188,7 +188,7 @@ const Hero = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
           >
             <span className="text-foreground">Hi, I'm </span>
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Aditya dakare</span>
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Aditya Dakare</span>
           </motion.h1>
 
           {/* Typing effect */}
