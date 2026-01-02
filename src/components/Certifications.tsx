@@ -4,31 +4,36 @@ import { BadgeCheck, ExternalLink } from 'lucide-react';
 const certifications = [
   {
     id: 1,
-    title: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
+    title: "AWS Solutions Architect Job Simulation",
+    issuer: "Forage",
     date: "2025",
-    link: "https://example.com/aws-certificate" // Replace with actual certificate link
+    description: "Hands-on virtual experience in designing scalable and reliable hosting architectures, simulating real-world responsibilities of a Solutions Architect with practical, industry-aligned tasks.",
+    link: "/certificates/AWS Solutions Architect Job Simulation.pdf"
   },
   {
     id: 2,
-    title: "Python Certification",
-    issuer: "Python Software Foundation",
+    title: "AWS Cloud Practitioner Essentials",
+    issuer: "Amazon Web Services",
     date: "2025",
-    link: "https://example.com/python-certificate" // Replace with actual certificate link
+    description: "Foundational knowledge of AWS cloud services, security, pricing models, and architectural best practices, enabling cloud-native and DevOps-ready solutions.",
+    link: "/certificates/aws-certified-solutions-architect.pdf"
   },
+
   {
     id: 3,
-    title: "SAP Certificate",
-    issuer: "SAP",
-    date: "2025",
-    link: "https://example.com/sap-certificate" // Replace with actual certificate link
+    title: "Python Complete Course for Beginners",
+    issuer: "Python Institute",
+    date: "2024",
+    description: "Comprehensive training in Python programming fundamentals with practical applications in automation and backend development.",
+    link: "/certificates/Python Certification.pdf"
   },
   {
     id: 4,
-    title: "Getting Started with Enterprise Data Science Badge",
-    issuer: "LinkedIn",
-    date: "2025",
-    link: "https://example.com/linkedin-certificate" // Replace with actual certificate link
+    title: "SAP Code Unnati – Emerging Technologies (ABAP on BTP)",
+    issuer: "SAP",
+    date: "2024",
+    description: "Advanced training in emerging technologies with hands-on experience in SAP ABAP development on SAP Business Technology Platform.",
+    link: "/certificates/SAP Certificate.pdf"
   }
 ];
 
@@ -92,6 +97,10 @@ const Certifications = () => {
                   <span className="text-sm font-medium text-primary">{cert.date}</span>
                 </div>
               </div>
+              
+              <p className="text-sm text-muted-foreground mb-4">
+                {cert.description}
+              </p>
               
               <div className="flex items-center justify-between">
                 <div className="text-xs text-muted-foreground">

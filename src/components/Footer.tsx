@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Mail, Heart, ArrowUp } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail, Cloud, ArrowUp } from 'lucide-react';
 import { ContactForm } from './ContactForm';
 import { useState } from 'react';
 
@@ -109,7 +109,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
           >
-            Made with <Heart className="w-4 h-4 text-emerald-500 fill-emerald-500" /> by Aditya Dakare
+            Made with <Cloud className="w-4 h-4 text-emerald-500 fill-emerald-500" /> by Aditya Dakare
           </motion.p>
 
           <motion.p

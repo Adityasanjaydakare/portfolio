@@ -1,46 +1,55 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
+import { ExternalLink, ArrowUpRight } from 'lucide-react';
+import { useState } from 'react';
 
 const projects = [
   {
-    title: 'Cloud Infrastructure Platform',
-    description: 'Multi-cloud infrastructure management platform with auto-scaling, monitoring, and cost optimization built on AWS and Terraform.',
-    tags: ['AWS', 'Terraform', 'Kubernetes', 'Python'],
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop',
+    title: 'CI/CD Pipeline Automation using Jenkins, Docker & AWS',
+    description: 'DevOps Project. Designed and implemented an end-to-end CI/CD pipeline integrating Jenkins, SonarQube, Docker, and AWS to automate build, test, and deployment workflows. Configured Jenkins pipelines to automate code checkout, frontend & backend builds, static code analysis, and Docker image creation. Integrated SonarQube for continuous code quality analysis and enforced Quality Gate validation to prevent faulty builds from progressing. Built and containerized applications using Docker to ensure consistent and reproducible deployments. Deployed and managed application infrastructure on AWS (EC2), enabling cloud-based execution of CI/CD workflows. Implemented automated pipelines triggered on code commits, simulating real-world DevOps workflows. Troubleshot pipeline failures, configuration issues, and build errors, improving debugging and system-integration skills.',
+    tags: ['Jenkins', 'Docker', 'AWS', 'SonarQube', 'CI/CD', 'DevOps'],
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop',
     github: '#',
     demo: '#',
+    pdf: '/certificates/CI_CD.pdf',
     color: 'from-emerald-500/20 to-green-500/20',
   },
   {
-    title: 'GitOps Pipeline Framework',
-    description: 'Enterprise-grade CI/CD framework using ArgoCD and GitHub Actions with automated testing and rollback capabilities.',
-    tags: ['ArgoCD', 'GitHub Actions', 'Docker', 'Helm'],
-    image: 'https://images.unsplash.com/photo-558494949-ef010cbdcc31?w=800&h=600&fit=crop',
+    title: 'AI Yoga Pose Detection & Healthcare',
+    description: 'Developed a real-time computer vision system using the YOLO Model to detect and classify yoga poses from video. Implemented a core logic utilizing the Cosine Similarity Algorithm to compare user posture against ideal pose landmarks, generating instant corrective feedback. Designed the backend with a Pain Suggestion Service and MongoDB to personalize practice, track progress, and recommend adjustments to prevent injury.',
+    tags: ['Computer Vision', 'YOLO', 'Cosine Similarity', 'MongoDB'],
+    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop',
     github: '#',
     demo: '#',
+    pdf: '/certificates/Yoga.pdf',
     color: 'from-teal-500/20 to-cyan-400/20',
   },
   {
-    title: 'Observability Stack',
-    description: 'Full observability solution with Prometheus, Grafana, and custom alerting for microservices architecture.',
-    tags: ['Prometheus', 'Grafana', 'AlertManager', 'Loki'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+    title: 'E-Commerce Platform: Shoes Collection Website',
+    description: 'Built a full-stack E-Commerce platform for local businesses using the MERN Stack (MongoDB, Express, React, Node.js). Developed a secure Admin Panel (single-IP access) for inventory and order management. Provided a complete client interface for product viewing, cart management, and order placement.',
+    tags: ['MERN Stack', 'MongoDB', 'Express', 'React', 'Node.js'],
+    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop',
     github: '#',
     demo: '#',
+    pdf: '/certificates/Shoe.pdf',
     color: 'from-lime-400/20 to-green-500/20',
   },
   {
-    title: 'Container Security Scanner',
-    description: 'Automated container vulnerability scanning integrated into CI/CD with policy-as-code enforcement.',
-    tags: ['Trivy', 'OPA', 'Docker', 'Go'],
-    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop',
+    title: 'Blood Bank Management System (BBMS)',
+    description: 'Developed a secure, web-based platform to automate and streamline the process of blood donation and request across Donors, Patients, and Blood Bank Administrators. Engineered the full-stack application using PHP and MySQL for robust database management and application logic, with HTML5/CSS3/JavaScript for the client side interface. Implemented critical features including real-time blood stock updates, patient request submission, donor self-service profile management, and location-based searching with Google Maps integration.',
+    tags: ['PHP', 'MySQL', 'HTML5', 'CSS3', 'JavaScript', 'Google Maps'],
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop',
     github: '#',
     demo: '#',
+    pdf: '/certificates/BBMS.pdf',
     color: 'from-amber-400/20 to-lime-400/20',
   },
 ];
 
 const Projects = () => {
+  const openPdf = (pdfPath) => {
+    window.open(pdfPath, '_blank');
+  };
+  
   return (
     <section id="projects" className="py-32 px-6 relative bg-background">
 
@@ -67,7 +76,7 @@ const Projects = () => {
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Projects</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A selection of projects showcasing my expertise in DevOps and cloud infrastructure
+            A selection of projects showcasing my expertise in full-stack development, computer vision, and web applications
           </p>
         </motion.div>
 
@@ -101,27 +110,7 @@ const Projects = () => {
                   />
                   <div className="absolute inset-0 bg-card/80" />
                   
-                  {/* Hover overlay */}
-                  <motion.div
-                    className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4"
-                  >
-                    <motion.a
-                      href={project.github}
-                      className="p-3 rounded-full bg-card text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Github className="w-5 h-5" />
-                    </motion.a>
-                    <motion.a
-                      href={project.demo}
-                      className="p-3 rounded-full bg-card text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                    </motion.a>
-                  </motion.div>
+
                 </div>
 
                 {/* Content */}
@@ -131,12 +120,6 @@ const Projects = () => {
                     <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
-                    <motion.div
-                      className="text-muted-foreground group-hover:text-primary transition-colors"
-                      whileHover={{ x: 3, y: -3 }}
-                    >
-                      <ArrowUpRight className="w-5 h-5" />
-                    </motion.div>
                   </div>
 
                   {/* Description */}
@@ -155,6 +138,18 @@ const Projects = () => {
                         {tag}
                       </motion.span>
                     ))}
+                  </div>
+                  
+                  {/* PDF View Button */}
+                  <div className="mt-4">
+                    <motion.button
+                      onClick={() => openPdf(project.pdf)}
+                      className="text-primary hover:text-primary/80 transition-colors text-sm flex items-center gap-1"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      View <ExternalLink className="w-3 h-3" />
+                    </motion.button>
                   </div>
                 </div>
 

@@ -5,6 +5,7 @@ import Experience from '@/components/Experience';
 import Certifications from '@/components/Certifications';
 import Pipeline from '@/components/Pipeline';
 import Projects from '@/components/Projects';
+import Resume from '@/components/Resume';
 import Footer from '@/components/Footer';
 import MouseGlow from '@/components/MouseGlow';
 
@@ -20,6 +21,7 @@ const Index = () => {
         <Certifications />
         <Pipeline />
         <Projects />
+        <Resume />
       </main>
       <Footer />
     </div>
